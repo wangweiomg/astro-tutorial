@@ -1,18 +1,55 @@
+---
+const pageTitle = "关于我们";
+
+const identity = {
+    name: "团队",
+    mission: "创建高质量的网页应用",
+    framework: "Astro"
+};
+
+const skills = [
+    "网页开发",
+    "性能优化",
+    "用户体验设计"
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 <body>
     <a href="/">首页</a>
     <a href="/about/">关于</a>
     <a href="/blog/">博客</a>
 
-    <h1>关于我们</h1>
+    <h1>{pageTitle}</h1>
     <p>欢迎来到关于我们页面！这里是一些关于我们团队的信息。</p>
     <p>我们致力于创建高质量的网页应用，使用Astro框架来实现最佳性能和用户体验。</p>
+
+    <p>我和我的团队</p>
+    <ul>
+        <li>我的名字：{identity.name}.</li>
+        <li>我们的使命：{identity.mission}.</li>
+        <li>我们使用的框架：{identity.framework}.</li>
+    </ul>
+
+    <p>我们的技能包括：</p>
+    <ul>
+        {skills.map((skill) => (
+            <li>{skill}</li>
+        ))}
+    </ul>
+
+    {happy && <p>我们很高兴与你分享我们的故事！</p>}
+    {finished ? <p>我们已经完成了我们的第一个项目！</p> : <p>我们仍在努力实现我们的目标。</p>}
+    <p>我们的目标是完成 {goal} 个主要项目。</p>
 </body>
 </html>
