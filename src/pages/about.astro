@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
 const pageTitle = "关于我们";
 
 const identity = {
@@ -10,12 +12,17 @@ const identity = {
 const skills = [
     "网页开发",
     "性能优化",
-    "用户体验设计"
+    "用户体验设计",
+    "java",
+    "golang"
 ];
 
 const happy = true;
 const finished = false;
 const goal = 3;
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 <html lang="en">
 	<head>
@@ -24,12 +31,26 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        <style define:vars={{skillColor, fontWeight, textCase}}>
+            
+            a {
+                margin-right: 15px;
+            }
+
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+        </style>
 	</head>
 <body>
-    <a href="/">首页</a>
-    <a href="/about/">关于</a>
-    <a href="/blog/">博客</a>
-
+   <Navigation />
     <h1>{pageTitle}</h1>
     <p>欢迎来到关于我们页面！这里是一些关于我们团队的信息。</p>
     <p>我们致力于创建高质量的网页应用，使用Astro框架来实现最佳性能和用户体验。</p>
@@ -44,7 +65,7 @@ const goal = 3;
     <p>我们的技能包括：</p>
     <ul>
         {skills.map((skill) => (
-            <li>{skill}</li>
+            <li class="skill">{skill}</li>
         ))}
     </ul>
 
