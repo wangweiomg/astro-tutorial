@@ -1,5 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
 import '../styles/global.css';
 const pageTitle = "关于我们";
 
@@ -72,5 +74,6 @@ const textCase = "uppercase";
     {happy && <p>我们很高兴与你分享我们的故事！</p>}
     {finished ? <p>我们已经完成了我们的第一个项目！</p> : <p>我们仍在努力实现我们的目标。</p>}
     <p>我们的目标是完成 {goal} 个主要项目。</p>
+    <Footer/>
 </body>
 </html>
