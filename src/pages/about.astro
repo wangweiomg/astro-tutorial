@@ -1,8 +1,6 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
 import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "关于我们";
 
 const identity = {
@@ -26,33 +24,7 @@ const skillColor = "crimson";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{skillColor, fontWeight, textCase}}>
-            
-            a {
-                margin-right: 15px;
-            }
-
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
-
-            .skill {
-                color: var(--skillColor);
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
-        </style>
-	</head>
-<body>
-    <Header />
+<BaseLayout {pageTitle}>
     <h1>{pageTitle}</h1>
     <p>欢迎来到关于我们页面！这里是一些关于我们团队的信息。</p>
     <p>我们致力于创建高质量的网页应用，使用Astro框架来实现最佳性能和用户体验。</p>
@@ -74,9 +46,21 @@ const textCase = "uppercase";
     {happy && <p>我们很高兴与你分享我们的故事！</p>}
     {finished ? <p>我们已经完成了我们的第一个项目！</p> : <p>我们仍在努力实现我们的目标。</p>}
     <p>我们的目标是完成 {goal} 个主要项目。</p>
-    <Footer/>
-    <script>
-        import "../scripts/menu.js";
-    </script>
-</body>
-</html>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+            
+            a {
+                margin-right: 15px;
+            }
+
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+    </style>
+</BaseLayout>
