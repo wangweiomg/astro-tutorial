@@ -1,20 +1,13 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "博客";
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-<body>
-    <Navigation />
-    <h1>博客</h1>
+<BaseLayout {pageTitle}>
+    <h1>博客-{pageTitle}</h1>
     <p>欢迎来到博客页面！这里是一些关于我们网站的信息。</p>
 
     <ul>
@@ -22,6 +15,4 @@ import '../styles/global.css';
         <li><a href="/posts/post-2/">博客文章 2</a></li>
         <li><a href="/posts/post-3/">博客文章 3</a></li>
     </ul>
-    <Footer/>
-    </body>
-</html>
+</BaseLayout>

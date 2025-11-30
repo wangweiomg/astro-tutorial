@@ -1,5 +1,5 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 import '../styles/global.css';
@@ -52,7 +52,7 @@ const textCase = "uppercase";
         </style>
 	</head>
 <body>
-   <Navigation />
+    <Header />
     <h1>{pageTitle}</h1>
     <p>欢迎来到关于我们页面！这里是一些关于我们团队的信息。</p>
     <p>我们致力于创建高质量的网页应用，使用Astro框架来实现最佳性能和用户体验。</p>
@@ -75,5 +75,8 @@ const textCase = "uppercase";
     {finished ? <p>我们已经完成了我们的第一个项目！</p> : <p>我们仍在努力实现我们的目标。</p>}
     <p>我们的目标是完成 {goal} 个主要项目。</p>
     <Footer/>
+    <script>
+        import "../scripts/menu.js";
+    </script>
 </body>
 </html>

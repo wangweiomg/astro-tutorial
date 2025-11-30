@@ -1,46 +1,8 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "我的credit网站";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Navigation />
-		<h1>{pageTitle}</h1>
-		<table>
-			<th>
-				<tr>
-					<td>编号</td>
-					<td>姓名</td>
-					<td>年龄</td>
-				</tr>
-			</th>
-			<tbody>
-				<tr>
-					<td>1</td>
-					<td>张三</td>
-					<td>18</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>李四</td>
-					<td>20</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>王五</td>
-					<td>22</td>
-				</tr>
-		</table>
-	<Footer/>
-	</body>
-</html>
+<BaseLayout {pageTitle}>
+	<p>欢迎来到我的credit网站！这是一个使用Astro构建的多页面网站。</p>
+	<p>请使用上方的导航菜单浏览不同的页面。</p>	
+</BaseLayout>
