@@ -4,7 +4,7 @@ title: '我的第二篇博客'
 pubDate: 2025-11-29
 description: '我的Astro'
 author: 'learner'
-tags: ["astro", "blogging"]
+tags: ["astro", "blogging", "jack"]
 ---
 欢迎来到这
 
