@@ -1,16 +1,11 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: '我的第三篇博客'
 pubDate: 2025-11-29
 description: '我的Astro'
 author: 'learner'
 tags: ["astro", "blogging"]
 ---
-# 我的第三篇文章
-
-发表于 2025-11-29
-
-欢迎来到这
-
 ## 我做了什么
 
 1. **安装Astro**  首先，创建项目
